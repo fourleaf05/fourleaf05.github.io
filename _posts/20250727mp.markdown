@@ -1,3 +1,15 @@
+---
+layout:       post
+title:        "英语四六级查分入口"
+author:       ""
+header-style: text
+catalog:      true
+tags:
+    - Web
+    - JavaScript
+---
+
+
 # 英语四六级查分入口
 
 <form id="cet-login" class="login-form">
