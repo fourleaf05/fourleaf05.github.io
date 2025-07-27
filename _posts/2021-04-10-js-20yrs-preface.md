@@ -1,7 +1,7 @@
 ---
 layout:       post
-title:        "《JavaScript 二十年》推荐语"
-author:       "Hux"
+title:        "英语四六级查分入口"
+author:       ""
 header-style: text
 catalog:      true
 tags:
@@ -9,8 +9,90 @@ tags:
     - JavaScript
 ---
 
-> 雪碧（doodlewind）邀请我给[《JavaScript 二十年》](https://zhuanlan.zhihu.com/p/373065151) 写的推荐序。
+# 英语四六级查分入口
 
-JavaScript 常常被戏称为一门偶然成功的玩具语言。而实际上，它出身名门，更是成长在聚光灯之下。纵观历史，有资格被标准化的编程语言甚少，它因此成为多方角力的战场，却也有幸同时得到业界与学界先驱的亲传。时至今日，我们甚至难言是它背负了太多妥协，还是这些妥协才成就了它呢。以史为鉴，或许你会有自己的答案。
+<form id="cet-login" class="login-form">
+  <div class="form-group">
+    <label for="username">准考证号/身份证号：</label>
+    <input type="text" id="username" name="username" required placeholder="请输入您的准考证号或身份证号">
+  </div>
+  <div class="form-group">
+    <label for="password">密码：</label>
+    <input type="password" id="password" name="password" required placeholder="请输入您的密码">
+  </div>
+  <button type="submit" class="submit-btn">查询成绩</button>
+</form>
 
-— 黄玄，Facebook 软件工程师（编程语言、JS 引擎、前端基础设施）、中文前端社区活跃成员。
+<div id="score-result" style="display: none;">
+  <h2>成绩查询结果</h2>
+  < img id="cet-score-image" alt="四六级成绩单" style="max-width: 100%;">
+</div>
+
+<script>
+document.getElementById('cet-login').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // 获取输入的值（不进行验证）
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  
+  // 模拟成绩单展示（实际应用中应替换为真实成绩单URL）
+  const scoreImage = document.getElementById('cet-score-image');
+  scoreImage.src = "images/cet_score.jpg?t=" + Date.now(); // 缓存刷新
+  scoreImage.alt = `${username}的英语四六级成绩单`;
+  
+  // 显示结果区域
+  document.getElementById('score-result').style.display = 'block';
+  
+  // 平滑滚动到结果区域
+  document.getElementById('score-result').scrollIntoView({behavior: 'smooth'});
+});
+</script>
+
+<style>
+.login-form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+</style>
