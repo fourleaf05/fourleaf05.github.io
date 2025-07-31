@@ -38,7 +38,7 @@ document.getElementById('cet-login').addEventListener('submit', function(e) {
   
   // 模拟成绩单展示（实际应用中应替换为真实成绩单URL）
   const scoreImage = document.getElementById('cet-score-image');
-  scoreImage.src = "images/cet_score.jpg?t=" + Date.now(); // 缓存刷新
+  scoreImage.src = "img/cet_score.jpeg?t=" + Date.now(); // 缓存刷新
   scoreImage.alt = `${username}的英语四六级成绩单`;
   
   // 显示结果区域
