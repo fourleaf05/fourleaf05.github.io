@@ -25,7 +25,7 @@ tags:
 
 <div id="score-result" style="display: none;">
   <h2>成绩查询结果</h2>
-  < img id="cet-score-img" alt="四六级成绩单" style="max-width: 100%;">
+  < img id="cet-score-image" alt="四六级成绩单" style="max-width: 100%;">
 </div>
 
 <script>
@@ -37,8 +37,8 @@ document.getElementById('cet-login').addEventListener('submit', function(e) {
   const password = document.getElementById('password').value;
   
   // 模拟成绩单展示（实际应用中应替换为真实成绩单URL）
-  const scoreImage = document.getElementById('cet-score-img');
-  scoreImage.src = "img/cet_score.jpeg?t=" + Date.now(); // 缓存刷新
+  const scoreImage = document.getElementById('cet-score-image');
+  scoreImage.src = "img/cet_score.jpg?t=" + Date.now(); // 缓存刷新
   scoreImage.alt = `${username}的英语四六级成绩单`;
   
   // 显示结果区域
